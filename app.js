@@ -31,14 +31,26 @@ let min = 1,
 
             // Validate
             if(isNaN(guess) === NaN || guess < min || guess > max){
-                setMessage(`please enter number between ${min} and ${max}`)
+                setMessage(`please enter number between ${min} and ${max}`, 'red')
+            }
+            // check if you won
+            if(guess === winnindNum){
+                // Display input
+                guessInput.disabled = true;
+                // Change border color
+                guessInput.style.borderColor = 'green';
+                // set message
+                setMessage(`${winningNum} is correct, YOU WIN!`, 'green');
+
+            }else {
 
             }
+
         });
 
         // Set Message
-        function setMessage(msg){
-            message.style.color = 'red';
+        function setMessage(msg, color){
+            message.style.color = 'color';
             message.textContent = msg;
         }
 
