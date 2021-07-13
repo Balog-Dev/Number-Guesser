@@ -10,7 +10,7 @@ GAME FUNTION
 // Game value
 let min = 1,
     max = 10,
-    winnindNum = 2,
+    winnindNum = getRandomNum(min, max);
     guessesLeft = 3;
 
     // UI Element
@@ -92,9 +92,12 @@ let min = 1,
     //  play a game?
     guessBtn.value = 'Play Again';
     guessBtn.className += 'Play-Again';
-
-        
         }
+        // get winning Number
+        function getRandomNum(min, max){
+            return Math.floor(math.random()*(max-min+1)+min);
+        }
+
         // Set Message
         function setMessage(msg, color){
             message.style.color = 'color';
