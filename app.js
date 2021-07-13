@@ -25,6 +25,13 @@ let min = 1,
         minNum.textContent = min;
         maxNum.textContent = max;
 
+        // play again event listiner
+        game.addEventListener('mousedown', function(e){
+            if(e.target.className === 'play-again'){
+            window.location.reload();
+            }
+        });
+
         //  Listen for guesser
         guessBtn.addEventListener('click', function(){
             let guess = parseInt(guessInput.value);
@@ -81,6 +88,11 @@ let min = 1,
         message.style.color = color;
       // Set Message
      setMessage(msg);
+
+    //  play a game?
+    guessBtn.value = 'Play Again';
+    guessBtn.className += 'Play-Again';
+
         
         }
         // Set Message
