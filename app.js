@@ -35,6 +35,8 @@ let min = 1,
             }
             // check if you won
             if(guess === winnindNum){
+                // Game over won
+
                 // Display input
                 guessInput.disabled = true;
                 // Change border color
@@ -43,6 +45,35 @@ let min = 1,
                 setMessage(`${winningNum} is correct, YOU WIN!`, 'green');
 
             }else {
+                // wrong number
+                guessesLeft -= 1;
+
+                if(guessesLeft === 0){
+                    // Game over - lost
+                    
+                    // Disable input
+                    guessInput.disabled = true;
+                    // Change Border color
+                    guessInput.style.color = 'red';
+
+                    // clear input
+                    guessInput.value = '';
+
+                    
+                    // Tell user its the wromg number
+
+                    guessInput.style.borderColor = 'red';
+                    // Set Message
+                    setMessage(`Game over, You Lost. The correct number
+                    was ${winnindNum}`, 'red');
+                }else {
+                    // Game continue answer wrong
+                    setMessage(`${guess} is not correct, ${guessesLeft} guess left`, 'red');
+
+
+
+
+                }
 
             }
 
