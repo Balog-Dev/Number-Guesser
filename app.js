@@ -51,34 +51,50 @@ let min = 1,
                 if(guessesLeft === 0){
                     // Game over - lost
                     
-                    // Disable input
-                    guessInput.disabled = true;
-                    // Change Border color
-                    guessInput.style.color = 'red';
+                    // // Disable input
+                    // guessInput.disabled = true;
+                    // // Change Border color
+                    // guessInput.style.color = 'red';
 
-                    // clear input
-                    guessInput.value = '';
+                    // // clear input
+                    // guessInput.value = '';
 
                     
-                    // Tell user its the wromg number
+                    // // Tell user its the wromg number
 
-                    guessInput.style.borderColor = 'red';
-                    // Set Message
-                    setMessage(`Game over, You Lost. The correct number
-                    was ${winnindNum}`, 'red');
+                    // guessInput.style.borderColor = 'red';
+                    // // Set Message
+                    // setMessage(`Game over, You Lost. The correct number
+                    // was ${winnindNum}`, 'red');
                 }else {
                     // Game continue answer wrong
                     setMessage(`${guess} is not correct, ${guessesLeft} guess left`, 'red');
 
-
-
-
                 }
-
             }
-
         });
 
+    // Game over
+     function gameOver(won, msg){
+     let color;
+     won === true ? color = 'green' : color = 'red';  
+            
+    // Disable input
+    guessInput.disabled = true;
+     // Change Border color
+     guessInput.style.color = color; 
+
+     // // clear input
+     guessInput.value = '';
+
+                    
+     // // Tell user its the wromg number
+
+     guessInput.style.borderColor = 'red';
+     // // Set Message
+     setMessage(msg);
+        
+        }
         // Set Message
         function setMessage(msg, color){
             message.style.color = 'color';
