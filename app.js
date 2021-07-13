@@ -50,22 +50,8 @@ let min = 1,
 
                 if(guessesLeft === 0){
                     // Game over - lost
-                    
-                    // // Disable input
-                    // guessInput.disabled = true;
-                    // // Change Border color
-                    // guessInput.style.color = 'red';
-
-                    // // clear input
-                    // guessInput.value = '';
-
-                    
-                    // // Tell user its the wromg number
-
-                    // guessInput.style.borderColor = 'red';
-                    // // Set Message
-                    // setMessage(`Game over, You Lost. The correct number
-                    // was ${winnindNum}`, 'red');
+                    gameOver(false, `Game over, You lost. the correct
+                    number was ${winnindNum}`);
                 }else {
                     // Game continue answer wrong
                     setMessage(`${guess} is not correct, ${guessesLeft} guess left`, 'red');
@@ -91,7 +77,9 @@ let min = 1,
      // // Tell user its the wromg number
 
      guessInput.style.borderColor = 'red';
-     // // Set Message
+    //  set text color
+        message.style.color = color;
+      // Set Message
      setMessage(msg);
         
         }
